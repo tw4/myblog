@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/mert/github/myblog/app/layout\":[\"static/media/c9a5bc6a7c948fb0-s.p.woff2\",\"static/media/162bf645eb375add-s.p.ttf\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
