@@ -2,9 +2,9 @@
 
 import projects__coffeeShopBackendMdx from './projects__Coffee-Shop-Backend.mdx.json' assert { type: 'json' }
 import projects__twitchStatsMdx from './projects__Twitch-Stats.mdx.json' assert { type: 'json' }
-import projects__profilecardMdx from './projects__profilecard.mdx.json' assert { type: 'json' }
-import projects__yourNoteWebAppMdx from './projects__your-note-web-app.mdx.json' assert { type: 'json' }
 import projects__buzzspireMessengerMdx from './projects__buzzspire-messenger.mdx.json' assert { type: 'json' }
 import projects__helpDeskBackendMdx from './projects__help-desk-backend.mdx.json' assert { type: 'json' }
+import projects__profilecardMdx from './projects__profilecard.mdx.json' assert { type: 'json' }
+import projects__yourNoteWebAppMdx from './projects__your-note-web-app.mdx.json' assert { type: 'json' }
 
-export const allProjects = [projects__coffeeShopBackendMdx, projects__twitchStatsMdx, projects__profilecardMdx, projects__yourNoteWebAppMdx, projects__buzzspireMessengerMdx, projects__helpDeskBackendMdx]
+export const allProjects = [projects__coffeeShopBackendMdx, projects__twitchStatsMdx, projects__buzzspireMessengerMdx, projects__helpDeskBackendMdx, projects__profilecardMdx, projects__yourNoteWebAppMdx]

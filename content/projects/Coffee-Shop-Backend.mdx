@@ -1,91 +1,89 @@
 ---
-title: "Coffee Shop Backend"
-description: This project contains a .NET 8 Web API developed for a coffee shop. The API supports various functionalities such as inventory management, product operations, user authentication, JWT-based validation, order creation, and user roles.
+title: "Kahve Dükkanı Arka Uç"
+description: Bu proje, bir kahve dükkanı için geliştirilmiş .NET 8 Web API içermektedir. API, envanter yönetimi, ürün işlemleri, kullanıcı kimlik doğrulama, JWT tabanlı doğrulama, sipariş oluşturma ve kullanıcı rolleri gibi çeşitli işlevleri destekler.
 repository: /tw4/Coffee-Shop-Backend
 date: "2023.12.30"
 published: true
 ---
 
-# Coffee Shop Backend - .NET 8 Web API
+# Kahve Dükkanı Arka Uç - .NET 8 Web API
 
-This project contains a .NET 8 Web API developed for a coffee shop. The API supports various functionalities such as inventory management, product operations, user authentication, JWT-based validation, order creation, and user roles.
+Bu proje, bir kahve dükkanı için geliştirilmiş .NET 8 Web API içermektedir. API, envanter yönetimi, ürün işlemleri, kullanıcı kimlik doğrulama, JWT tabanlı doğrulama, sipariş oluşturma ve kullanıcı rolleri gibi çeşitli işlevleri destekler.
 
-## Getting Started
+## Başlarken
 
-To run the project on your local machine, follow these steps:
+Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
-1. Clone the repository:
- ```bash
- git clone https://github.com/tw4/Coffee-Shop-Backend.git
-    ```
-2. Navigate to the project directory:
- ```bash
- cd coffee-shop-backend
-    ```
-3. Install the required dependencies:
- ```bash
- dotnet restore
-    ```
-4. Create database table for Logs:
- ```sql
- CREATE TABLE [Logs] (
+1. Depoyu klonlayın:
+```bash
+git clone https://github.com/tw4/Coffee-Shop-Backend.git
+   ```
+2. Proje dizinine gidin:
+```bash
+cd coffee-shop-backend
+   ```
+3. Gerekli bağımlılıkları yükleyin:
+```bash
+dotnet restore
+   ```
+4. Logs için veritabanı tablosu oluşturun:
+```sql
+CREATE TABLE [Logs] (
+   [Id] int IDENTITY(1,1) NOT NULL,
+   [Message] nvarchar(max) NULL,
+   [MessageTemplate] nvarchar(max) NULL,
+   [Level] nvarchar(128) NULL,
+   [TimeStamp] datetime NOT NULL,
+   [Exception] nvarchar(max) NULL,
+   [Properties] nvarchar(max) NULL,
+   CONSTRAINT [PK_Logs] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+   ```
+5. Veritabanı göçlerini oluşturun:
+```bash
+dotnet ef migrations add initialcreate
+   ```
+6. Veritabanı göçlerini uygulayın:
+```bash
+dotnet ef database update
+   ```
+7. Projeyi çalıştırın:
+```bash
+dotnet run
+   ```
+8. API varsayılan olarak `https://localhost:5001` adresinde çalışacaktır.
 
-[Id] int IDENTITY(1,1) NOT NULL,
-[Message] nvarchar(max) NULL,
-[MessageTemplate] nvarchar(max) NULL,
-[Level] nvarchar(128) NULL,
-[TimeStamp] datetime NOT NULL,
-[Exception] nvarchar(max) NULL,
-[Properties] nvarchar(max) NULL
+## Kullanım
 
-CONSTRAINT [PK_Logs] PRIMARY KEY CLUSTERED ([Id] ASC));
-    ```
+API kullanarak aşağıdaki işlevleri gerçekleştirebilirsiniz:
 
-5. Create database migrations:
- ```bash
- dotnet ef migrations add initialcreate
-    ```
-6. Apply database migrations:
- ```bash
- dotnet ef database update
-    ```
-7. Run the project:
- ```bash
- dotnet run
-    ```
-8. The API will run by default at `https://localhost:5001`.
+- Envanter Yönetimi: Ürünleri listeleme, ekleme, güncelleme ve silme.
+- Kullanıcı Yönetimi: Kullanıcıları oluşturma, güncelleme ve silme.
+- JWT Kullanıcı Kimlik Doğrulama: Kullanıcı girişi ve token alımı.
+- Kullanıcı Rolleri: Kullanıcı rollerini yönetme ve atanmış rolleri kontrol etme.
+- Sipariş Oluşturma: Ürünlere dayalı sipariş oluşturma ve yönetme.
 
-## Usage
+## Teknolojiler
 
-You can perform the following functionalities using the API:
-
-- Inventory Management: Listing, adding, updating, and deleting products.
-- User Management: Creating, updating, and deleting users.
-- JWT User Authentication: User login and token retrieval.
-- User Roles: Managing user roles and checking assigned roles.
-- Order Creation: Creating and managing orders based on products.
-
-## Technologies
-
-This project utilizes the following technologies:
+Bu proje aşağıdaki teknolojileri kullanmaktadır:
 
 - .NET 8
 - Entity Framework Core
-- JWT Authentication
-- Swagger/OpenAPI documentation
+- JWT Kimlik Doğrulama
+- Swagger/OpenAPI belgelendirme
 - Redis
 - Elasticsearch
 - Docker
 - Azure SQL Edge
 - Stripe
 - Serilog
-- Testing
+- Test
 - xUnit.net
 
-## Contributing
+## Katkıda Bulunma
 
-If you'd like to contribute to this project, please check the `CONTRIBUTING.md` file and feel free to submit a pull request.
+Bu projeye katkıda bulunmak istiyorsanız, lütfen `CONTRIBUTING.md` dosyasını kontrol edin ve istediğiniz gibi bir pull request göndermekten çekinmeyin.
 
-## License
+## Lisans
 
-This project is licensed under the [MIT License](LICENSE).
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
