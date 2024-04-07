@@ -6,14 +6,13 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "mert türkoğlu | software developer",
+    default: "mert türkoğlu | Yazılım Geliştirici",
     template: "%s | mert türkoğlu",
   },
-  description: "Software developer, blogger, and open-source contributor.",
+  description: "Merhaba! Ben bir yazılım geliştiriciyim. Deneyimlerim ve biriktirdiğim bilgiyle yazılım dünyasında sürekli gelişme yolculuğunda ilerliyorum.",
   openGraph: {
-    title: "mert türkoğlu",
-    description:
-      "Software developer, blogger, and open-source contributor.",
+    title: "mert türkoğlu | Yazılım Geliştirici",
+    description: "Merhaba! Ben bir yazılım geliştiriciyim. Deneyimlerim ve biriktirdiğim bilgiyle yazılım dünyasında sürekli gelişme yolculuğunda ilerliyorum.",
     url: "https://www.mert.run",
     siteName: "mert türkoğlu",
     images: [
@@ -21,6 +20,7 @@ export const metadata: Metadata = {
         url: "https://avatars.githubusercontent.com/u/88425310?v=4",
         width: 1920,
         height: 1080,
+        alt: "Mert Türkoğlu - Yazılım Geliştirici"
       },
     ],
     locale: "tr_TR",
@@ -38,13 +38,14 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "mert türkoğlu",
+    title: "mert türkoğlu | Yazılım Geliştirici",
     card: "summary_large_image",
   },
   icons: {
     shortcut: "/favicon.png",
   },
 };
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -56,21 +57,20 @@ const calSans = LocalFont({
 });
 
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+      <html lang="tr" className={[inter.variable, calSans.variable].join(" ")}>
       <head>
         <Analytics />
       </head>
       <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-          }`}
+          className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined}`}
       >
-        {children}
+      {children}
       </body>
-    </html>
+      </html>
   );
 }
